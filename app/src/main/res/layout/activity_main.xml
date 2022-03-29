@@ -4,28 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:layout_marginTop="30dp"
     android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="30dp"
 
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:textColor="#485DA5"
-        android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_gravity="center"
-
         android:text="@string/title"
+
+        android:textColor="#485DA5"
+
+        android:textSize="30dp"
 
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Số tiền gửi"
+        android:text="Số tiền gửi *"
         tools:ignore="HardcodedText" />
 
     <EditText
@@ -34,12 +35,12 @@ android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:hint="đ"
         android:inputType="number"
-        />
+        android:textColor="#483FA8" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lãi suất gửi"
+        android:text="Lãi suất gửi *"
         tools:ignore="HardcodedText" />
 
     <EditText
@@ -47,26 +48,30 @@ android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="%/Năm"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColor="#483FA8"
+
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kì hạn gửi" />
+        android:text="Kì hạn gửi *" />
 
     <EditText
         android:id="@+id/kiHanGuiText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="%/Tháng"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColor="#483FA8" />
 
     <Button
-        android:layout_margin="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#68300B"
+        android:layout_margin="30dp"
+        android:backgroundTint="#704DDC"
         android:onClick="resultBtnClick"
         android:text="Xem kết quả" />
 

@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText soTienGuiText;
     EditText laiSuatGuiText;
     EditText kiHanGuiText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +26,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resultBtnClick(View view) {
+        if (soTienGuiText.getText().toString().trim().equals("")
+                || laiSuatGuiText.getText().toString().trim().equals("")
+                || kiHanGuiText.getText().toString().equals(""))
+            return;
 
         double soTienGui = Double.parseDouble(soTienGuiText.getText().toString());
         double laiSuatGui = Double.parseDouble(laiSuatGuiText.getText().toString());
         double kiHanGui = Double.parseDouble(kiHanGuiText.getText().toString());
 
-        double soTienLai = soTienGui * laiSuatGui * kiHanGui/12/100;
+        double soTienLai = soTienGui * laiSuatGui * kiHanGui / 12 / 100;
 
         Intent intent = new Intent(this, Result.class);
 
 
-        intent.putExtra("soTienLai", Double.toString(soTienLai) );
-        intent.putExtra("tongSoTien", Double.toString(soTienGui + soTienLai));
+        intent.putExtra("soTienLai", Integer.toString((int)soTienLai));
+        intent.putExtra("tongSoTien", Integer.toString((int)(soTienGui + soTienLai)));
 
         startActivity(intent);
 
